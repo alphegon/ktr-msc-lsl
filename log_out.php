@@ -1,5 +1,6 @@
 <?php
-setcookie('user', time() - 3600);
+$cookie_value = -1;
+setcookie("user", $cookie_value); // 86400 = 1 day
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +19,6 @@ setcookie('user', time() - 3600);
 </html>
 <script>
          setTimeout(function(){
-            window.location.href = 'index.php';
+            window.location.href = '/epitech/index.php';
          }, 3000);
 </script>

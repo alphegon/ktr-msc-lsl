@@ -1,8 +1,8 @@
 
 <?php
-$user='root';
+$userBDD='root';
 $pass='';
-$connexion = new PDO('mysql:host=localhost;dbname=cards_me', $user, $pass);
+$connexion = new PDO('mysql:host=localhost;dbname=cards_me', $userBDD, $pass);
 $testConn = $connexion->prepare("SELECT * FROM user WHERE name = ?");
 $testConn->execute([$_COOKIE['user']]);
 $user=$testConn->fetch();
@@ -27,15 +27,23 @@ $user=$testConn->fetch();
   </div>
 
   <div class="all_cards">
-    <div style="width:20%" class="card">
-      <div class="card-body">
-        <h4 class="card-title">Name</h4>
-        <h6 class="card-subtitle mb-2 text-muted">Company</h6>
-        <h6 class="card-subtitle mb-2 text-muted">Email</h6>
-        <h6 class="card-subtitle mb-2 text-muted">Phone</h6>
-      </div>
-    </div>
-    
+    <?php 
+    $testConn = $connexion->prepare("SELECT * FROM card WHERE id_user = ?");
+    $testConn->execute([$user['id']]);
+    $result = $testConn->fetchAll();
+    foreach($result as $row){
+      ?>
+          <div style="width:20%" class="card">
+          <div class="card-body">
+            <h4 class="card-title"><?php echo($row['name'])?></h4>
+            <h6 class="card-subtitle mb-2 text-muted"><?php echo($row['company'])?></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><?php echo($row['email'])?></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><?php echo($row['telephone'])?></h6>
+          </div>
+        </div>
+      <?php
+    }
+    ?>
       <div style="width:20%" class="card">
       <a href="add_card.php">
         <div class="card-body">

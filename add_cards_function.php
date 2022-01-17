@@ -13,10 +13,10 @@ if ($count>0)
         header("Location: add_card.php?exist" );
     }
 else{
-    $sql = $connexion->prepare("INSERT INTO card (name, company, email, phone, id_user) VALUES (?, ?, ?, ?, ?)");
-    if ($sql->execute(array($_POST['postName'],$_POST['postCompany'],$_POST['postEmail'],$_POST['postPhone'],$_GET["user"])) === TRUE) {
+    $sql = $connexion->prepare("INSERT INTO card (name, company, email, telephone, id_user) VALUES (?, ?, ?, ?, ?)");
+    if ($sql->execute(array($_POST['postName'],$_POST['postCompany'],$_POST['postEmail'],$_POST['postPhone'], $_GET['user'])) === TRUE) {
         echo "New record created successfully";
-        header("Location: account.php" );
+        header("Location: cards.php" );
     } else {
         echo "Error: " . $sql . "<br>" ;
     }

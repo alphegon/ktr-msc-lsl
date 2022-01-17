@@ -1,5 +1,9 @@
 
 <?php
+if($_COOKIE["user"] == -1){
+  header("Location: index.php" );
+}
+
 $user='root';
 $pass='';
 $connexion = new PDO('mysql:host=localhost;dbname=cards_me', $user, $pass);

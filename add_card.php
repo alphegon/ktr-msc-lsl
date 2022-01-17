@@ -16,16 +16,7 @@ $user=$testConn->fetch();
 </head>
 <body>
 <h1>Add Cards to your account</h1>
-
-<div class="account">
-  <div class="menu"class="btn-group-vertical">
-    <a href="account.php"><button type="button" class="btn btn-primary">Informations</button></a>
-    <a href="cards.php"><button type="button" class="btn btn-primary">Business Cards</button></a>
-    <a href="log_out.php"><button type="button" class="btn btn-danger">Log Out</button></a>
-  </div>
-
-  <div class="all_cards">
-  <?php
+<?php
         if(isset($_GET["exist"])){
             ?>
                 <div class="alert alert-dismissible alert-danger">
@@ -35,6 +26,15 @@ $user=$testConn->fetch();
             <?php
         }
         ?>
+<div class="account">
+  <div class="menu"class="btn-group-vertical">
+    <a href="account.php"><button type="button" class="btn btn-primary">Informations</button></a>
+    <a href="cards.php"><button type="button" class="btn btn-primary">Business Cards</button></a>
+    <a href="log_out.php"><button type="button" class="btn btn-danger">Log Out</button></a>
+  </div>
+
+  <div class="all_cards">
+
 
   <form method="POST" action="add_cards_function.php?user=<?php echo($user[0])?>">
   <fieldset>

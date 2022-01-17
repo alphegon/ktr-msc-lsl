@@ -1,6 +1,5 @@
 <?php
-$cookie_value = null;
-setcookie("user", $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
 $user='root';
 $pass='';
 $connexion = new PDO('mysql:host=localhost;dbname=cards_me', $user, $pass);
