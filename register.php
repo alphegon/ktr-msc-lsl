@@ -26,7 +26,7 @@ if(isset($_GET["exist"])){
     <?php
 }
 ?>
-<form method="POST" action="register.php">
+<form method="POST" action="register_function.php">
   <fieldset>
     <div class="form-group">
         <label for="inputName" class="form-label mt-4">Name</label><span class="obligatory"> *</span>
