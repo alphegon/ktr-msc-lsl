@@ -1,0 +1,29 @@
+.account{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 10%;
+    margin: 15px;
+}
+
+.menu button{
+    width: 100%;
+}
+
+.all_cards{
+    width:75%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin:10px;
+    
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
