@@ -1,6 +1,5 @@
 
 <?php 
-setcookie("user", $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
     if($_COOKIE["user"] != -1){
         header("Location: account.php" );
     }
