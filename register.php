@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-<button type="button" class="btn btn-secondary">Retour</button>
+<a href="index.php" type="button" class="btn btn-secondary">Retour</a>
 <h1>
     New on Card's Me ? Join us !
 </h1>
